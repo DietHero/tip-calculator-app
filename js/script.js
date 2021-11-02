@@ -9,7 +9,24 @@ var tipCustom = document.querySelector('.tip__input')
 var tipPerson = document.querySelector('.amount__result')
 var totalPerson = document.querySelector('.total__result')
 var reset = document.querySelector('.reset__button')
+var alert = document.querySelector('.alert__title')
+var peopleContainer = document.querySelector('.people__input--container')
 
+numberOfPeople.addEventListener(
+    'input', 
+    function(event){
+        var input = event.target
+        var value = input.value
+        if (value == 0) {
+            alert.style.visibility = 'visible'
+            peopleContainer.style.border = '2px solid rgb(139, 4, 4)'
+        } else if (value !== 0 ) {
+            alert.style.visibility = 'hidden'
+            peopleContainer.style.border = 'none'
+        }
+
+    }
+)
 
 tip5.addEventListener(
     'click',
